@@ -1,11 +1,4 @@
-type YoutubeComponent = {
-  id: number;
-  title: string;
-  image: string;
-  avartar: string;
-  authorName: string;
-  isAdmin?: string;
-};
+import { YoutubeType } from "../../types/common";
 
 const YoutubeComponent = ({
   id,
@@ -13,7 +6,7 @@ const YoutubeComponent = ({
   image,
   avartar,
   authorName,
-}: YoutubeComponent) => {
+}: YoutubeType) => {
   // const isCondition = true;
   // if (isCondition) {
   //   return (

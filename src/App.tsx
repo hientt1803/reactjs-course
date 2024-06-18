@@ -2,14 +2,7 @@ import YoutubeComponent from "./components/props/YoutubeComponent";
 import MainLayout from "./layouts/MainLayout";
 import { youtubeData } from "./lib/youtubeData";
 import "./styles/App.css";
-
-type YoutubeType = {
-  id: number;
-  title: string;
-  image: string;
-  avartar: string;
-  authorName: string;
-};
+import { YoutubeType } from "./types/common";
 
 const listYoutubes: YoutubeType[] = youtubeData;
 function App() {
