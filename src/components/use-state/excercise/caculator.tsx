@@ -6,20 +6,20 @@ const Calculator = () => {
   const [result, setResult] = useState<number>(0);
 
   const calculate = () => {
-    setResult(Number(num1) + Number(num2));
+    setResult(num1 + num2);
   };
 
   return (
     <div>
       <h1>Simple Calculator</h1>
       <input
-        type="number"
+        type="text"
         value={num1}
         onChange={(e) => setNum1(Number(e.target.value))}
         placeholder="First number"
       />
       <input
-        type="number"
+        type="text"
         value={num2}
         onChange={(e) => setNum2(Number(e.target.value))}
         placeholder="Second number"

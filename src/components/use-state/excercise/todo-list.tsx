@@ -9,17 +9,9 @@ const TodoList = () => {
     setInput("");
   };
 
-  const handleAddTodoByKeyboard = (
-    e: React.KeyboardEvent<HTMLInputElement>
-  ) => {
-    if (e.key === "Enter") addTodo();
-  };
-
-  const handleDeleteItem = (index: number) => {
-    const newTodos = [...todos];
-    newTodos.splice(index, 1);
-    setTodos(newTodos);
-  };
+  // Tạo hàm xóa item ra khỏi list
+  // Xóa 1 item ra khỏi listTodo
+  // splice
 
   return (
     <div>
@@ -28,7 +20,11 @@ const TodoList = () => {
         type="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        onKeyDown={(e) => handleAddTodoByKeyboard(e)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            addTodo();
+          }
+        }}
         placeholder="Add a todo"
       />
       <button onClick={addTodo}>Add</button>
@@ -36,7 +32,6 @@ const TodoList = () => {
         {todos.map((todo, index) => (
           <li key={index} className="flex justify-start gap-10">
             <span>{todo}</span>
-            <span onClick={() => handleDeleteItem(index)}>X</span>
           </li>
         ))}
       </ul>

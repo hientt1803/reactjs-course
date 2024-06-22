@@ -28,25 +28,9 @@ const NestedUpdateObject = () => {
     });
   }
 
-  function handleCityChange(e: ChangeEvent<HTMLInputElement>) {
-    setPerson({
-      ...person,
-      artwork: {
-        ...person.artwork,
-        city: e.target.value,
-      },
-    });
-  }
+  function handleCityChange(e: ChangeEvent<HTMLInputElement>) {}
 
-  function handleImageChange(e: ChangeEvent<HTMLInputElement>) {
-    setPerson({
-      ...person,
-      artwork: {
-        ...person.artwork,
-        image: e.target.value,
-      },
-    });
-  }
+  function handleImageChange(e: ChangeEvent<HTMLInputElement>) {}
 
   return (
     <>

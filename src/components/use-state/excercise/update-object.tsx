@@ -1,10 +1,16 @@
 import { ChangeEvent, useState } from "react";
 
+type Iperson = {
+  firstName: string;
+  lastName: string;
+  email: string;
+};
+
 const UpdateBbject = () => {
-  const [person, setPerson] = useState({
-    firstName: "Barbara",
-    lastName: "Hepworth",
-    email: "bhepworth@sculpture.com",
+  const [person, setPerson] = useState<Iperson>({
+    firstName: "John",
+    lastName: "Nathan",
+    email: "abc@gmail.com",
   });
 
   function handleFirstNameChange(e: ChangeEvent<HTMLInputElement>) {
@@ -32,6 +38,7 @@ const UpdateBbject = () => {
     <>
       <label>
         First name:
+        {/* track johnabca*/}
         <input value={person.firstName} onChange={handleFirstNameChange} />
       </label>
       <label>

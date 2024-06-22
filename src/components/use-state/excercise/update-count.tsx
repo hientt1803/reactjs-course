@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const UpdateCount = () => {
+  // tạo một state và initial value, gán datatype
   const [count, setCount] = useState<number>(0);
 
   const handleIncrement = () => {

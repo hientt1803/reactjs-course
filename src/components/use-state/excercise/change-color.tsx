@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const ChangeBackgroundColor = () => {
-  const [color, setColor] = useState("white");
+  const [color, setColor] = useState<string>("white");
 
   const changeColor = () => {
     const newColor = color === "white" ? "blue" : "white";
@@ -9,9 +9,7 @@ const ChangeBackgroundColor = () => {
   };
 
   return (
-    <div
-      style={{ backgroundColor: color, height: "100vh", textAlign: "center" }}
-    >
+    <div style={{ backgroundColor: color, height: "100vh", textAlign: "center" }}>
       <button onClick={changeColor}>Change Background Color</button>
     </div>
   );

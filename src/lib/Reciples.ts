@@ -1,4 +1,4 @@
-export const recipes = [
+[
   {
     id: "greek-salad",
     name: "Greek Salad",
