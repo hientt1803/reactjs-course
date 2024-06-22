@@ -1,12 +1,18 @@
-import React, { useRef, useState } from "react";
+import { useState } from "react";
 
 const ExampleUseState = () => {
-  const [first, setfirst] = useState(data);
-  const refData = useRef();
-  
-  return <div>
+  const [first, setFirst] = useState("value");
 
-  </div>;
+  const handleSetvalue = () => {
+    setFirst("New value");
+  };
+
+  return (
+    <div>
+      <div>{first}</div>
+      <button onClick={handleSetvalue}>Click me</button>
+    </div>
+  );
 };
 
 export default ExampleUseState;
