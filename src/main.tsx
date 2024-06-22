@@ -1,8 +1,18 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
+
 import "./styles/index.css";
-import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
+
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import App from "./App.tsx";
+import ArticlePage from "./components/react-route/article.tsx";
+import ContactPage from "./components/react-route/contact.tsx";
+import ProductPage from "./components/react-route/product.tsx";
+import AuthLayout from "./layouts/AuthLayout.tsx";
+import MainLayout from "./layouts/MainLayout.tsx";
+import AboutPage from "./components/react-route/about.tsx";
+import YoutubeDetail from "./components/react-route/youtube-detail.tsx";
 
 /**
  * khỏi tạo router cho ứng dụng React
@@ -10,21 +20,55 @@ import { createBrowserRouter, Link, RouterProvider } from "react-router-dom";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <div>
-        <App />
-      </div>
-    ),
+    element: <MainLayout />,
+    children: [
+      {
+        index: true,
+        element: <App />,
+      },
+      {
+        path: "about",
+        element: <AboutPage />,
+      },
+      {
+        path: "contact",
+        element: <ContactPage />,
+      },
+      {
+        path: "detail/:youtubeId",
+        element: <YoutubeDetail />,
+      },
+      {
+        path: "articles",
+        element: <ArticlePage />,
+        loader: async () => {
+          const response = await fetch(
+            "https://jsonplaceholder.typicode.com/users"
+          );
+          const user = await response.json();
+          return user;
+        },
+        children: [],
+      },
+      {
+        path: "product/:productId",
+        element: <ProductPage />,
+      },
+    ],
   },
   {
-    path: "about",
-    element: (
-      <div>
-        About
-        <Link to={"about"}>About</Link>
-        <Link to={"/"}>Home</Link>
-      </div>
-    ),
+    path: "auth",
+    element: <AuthLayout />,
+    children: [
+      {
+        path: "profile",
+        element: <div>Profile</div>,
+      },
+      {
+        path: "forgot-password",
+        element: <div>Forgot password</div>,
+      },
+    ],
   },
 ]);
 

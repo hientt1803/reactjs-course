@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { YoutubeType } from "../../types/common";
 
 const YoutubeComponent = ({
@@ -24,7 +25,7 @@ const YoutubeComponent = ({
   // }
 
   return (
-    <div className="flex flex-col gap-2">
+    <Link to={`/detail/${id}`} className="flex flex-col gap-2">
       <div className="shadow-lg">
         <img
           src={
@@ -55,7 +56,7 @@ const YoutubeComponent = ({
         </div>
         <div>|</div>
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -1,0 +1,36 @@
+$primaryColor: red;
+$secondColor: #f1f1f1;
+
+@mixin DisplayTextAndLayout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigationMenu {
+    color: $secondColor;
+    font-weight: 500;
+    text-align: center;
+    @include DisplayTextAndLayout;
+
+    .navigationItem {
+        text-decoration: underline;
+        color: $primaryColor;
+        @include DisplayTextAndLayout;
+
+        &:hover {
+            text-decoration: line-through;
+        }
+    }
+}
+
+.buttonTitle {
+    text-align: white;
+    background-color: #212121;
+    padding: 10px 20px;
+}
+
+.button-primary {
+    @extend .buttonTitle;
+    transition: all 0.3s ease-in;
+}

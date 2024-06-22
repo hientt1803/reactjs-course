@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { youtubeData } from "../../lib/youtubeData";
 import YoutubeComponent from "../props/YoutubeComponent";
 
@@ -9,8 +10,9 @@ type YoutubeType = {
   authorName: string;
 };
 
-const listYoutubes: YoutubeType[] = youtubeData;
+// const listYoutubes: YoutubeType[] = youtubeData;
 const ListYoutube = () => {
+  const [listYoutubes, setlistYoutubes] = useState<YoutubeType[]>(youtubeData);
   return (
     // Đây là cách render list với map and props
     // Thử import component này vào component App thay và xóa code render list trong component App

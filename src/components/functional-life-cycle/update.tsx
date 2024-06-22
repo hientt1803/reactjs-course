@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export function SimpleUpdatingExample() {
   const [count, setCount] = useState<number>(0);
-
+// Hooks
   const handleClick = () => {
     setCount(count + 1);
     // alert("clicked");
