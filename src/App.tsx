@@ -1,18 +1,9 @@
-import Calculator from "./components/use-state/excercise/caculator";
-import TodoList from "./components/use-state/excercise/todo-list";
-import ExampleUseState from "./components/use-state/useState";
+import CatFriends from "./components/state/use-ref/rolling-to-image";
 
 function App() {
   return (
     <>
-      {/* <ExampleUseState /> */}
-      {/* <UpdateCount /> */}
-      {/* <ChangeBackgroundColor /> */}
-      {/* <UpdateBbject /> */}
-      {/* <NestedUpdateObject /> */}
-      <TodoList />
-      {/* <Calculator /> */}
-      {/* <ProductRating /> */}
+      <CatFriends />
     </>
   );
 }
