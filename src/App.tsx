@@ -1,32 +1,19 @@
+import { TodoList } from "./components/state/use-callback-memo/exercise/bai-2";
 
 function App() {
   // const [show, setShow] = useState(false);
 
   return (
     <>
-      {/* Example */}
-      {/* <ExampleEffect /> */}
-      {/* <SecondExample /> */}
-      {/* <FetchData /> */}
-      {/* <GlobalBrowerEvent /> */}
+      {/* Xample */}
+      {/* <ExampleUseCallBack /> */}
+      {/* <Example2 /> */}
+      {/* <Example3 /> */}
 
-      {/* Show dialog*/}
-      {/* <button onClick={() => setShow(true)}>Open dialog</button>
-      <ModalDialog isOpen={show}>
-        Hello there!
-        <br />
-        <button
-          onClick={() => {
-            setShow(false);
-          }}
-        >
-          Close
-        </button>
-      </ModalDialog> */}
-      {/* <CountdownTimer initialCount={10}/> */}
-
-      {/* fetch data */}
-      {/* <DataFetcher /> */}
+      {/* Excercise */}
+      {/* <ProductList /> */}
+      <TodoList />
+      {/* <Calculator /> */}
     </>
   );
 }
