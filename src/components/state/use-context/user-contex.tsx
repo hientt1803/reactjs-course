@@ -1,4 +1,4 @@
-import React from "react";
+import { Button } from "../../ui/button";
 import { useUser } from "./providers/user-provider";
 
 const UserProfile = () => {
@@ -18,12 +18,16 @@ const UserProfile = () => {
         <div>
           <p>Name: {user.name}</p>
           <p>Email: {user.email}</p>
-          <button onClick={handleLogout}>Logout</button>
+          <Button variant={"destructive"} onClick={handleLogout}>
+            Logout
+          </Button>
         </div>
       ) : (
         <div>
           <p>No user logged in</p>
-          <button onClick={handleLogin}>Login</button>
+          <Button variant={"secondary"} onClick={handleLogin}>
+            Login
+          </Button>
         </div>
       )}
     </div>

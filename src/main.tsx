@@ -6,13 +6,15 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App.tsx";
+import AboutPage from "./components/react-route/about.tsx";
 import ArticlePage from "./components/react-route/article.tsx";
 import ContactPage from "./components/react-route/contact.tsx";
 import ProductPage from "./components/react-route/product.tsx";
+import YoutubeDetail from "./components/react-route/youtube-detail.tsx";
+import { UserProvider } from "./components/state/use-context/providers/user-provider.tsx";
 import AuthLayout from "./layouts/AuthLayout.tsx";
 import MainLayout from "./layouts/MainLayout.tsx";
-import AboutPage from "./components/react-route/about.tsx";
-import YoutubeDetail from "./components/react-route/youtube-detail.tsx";
+import { ThemeProvider } from "./components/state/use-context/providers/theme.tsx";
 
 /**
  * khỏi tạo router cho ứng dụng React
@@ -75,6 +77,10 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     {/* Cung cấp router cho ứng dụng */}
-    <RouterProvider router={router} />
+    <UserProvider>
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </UserProvider>
   </React.StrictMode>
 );

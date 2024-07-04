@@ -1,4 +1,3 @@
-import { TodoList } from "./components/state/use-callback-memo/exercise/bai-2";
 
 function App() {
   // const [show, setShow] = useState(false);
@@ -6,14 +5,23 @@ function App() {
   return (
     <>
       {/* Xample */}
-      {/* <ExampleUseCallBack /> */}
-      {/* <Example2 /> */}
-      {/* <Example3 /> */}
+      {/* <ExampleReducer1/> */}
+      {/* <ExampleReducer2 /> */}
+      {/* <ComplexStateManagement /> */}
 
-      {/* Excercise */}
-      {/* <ProductList /> */}
-      <TodoList />
+      {/* Exercise */}
+      {/* <Counter /> */}
+      {/* <TaskManager /> */}
       {/* <Calculator /> */}
+      {/* <ShoppingCart /> */}
+
+      {/* Context */}
+      {/* Exxample */}
+      {/* <ExampleContext1 /> */}
+      {/* <UserProfile /> */}
+
+      {/* Exercies */}
+      {/* <ThemeContexExample /> */}
     </>
   );
 }

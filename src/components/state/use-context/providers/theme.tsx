@@ -1,13 +1,6 @@
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import { ReactNode, useContext, useState } from "react";
+import { ThemeContext, ThemeContextType } from "../contex/theme";
 
-// Define the shape of the theme context
-interface ThemeContextType {
-  theme: string;
-  toggleTheme: () => void;
-}
-
-// Create the context with a default value
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 // Custom hook to use the theme context
 const useTheme = (): ThemeContextType => {
@@ -38,3 +31,4 @@ const ThemeProvider = ({ children }: ThemeProviderProps) => {
 };
 
 export { ThemeProvider, useTheme };
+
