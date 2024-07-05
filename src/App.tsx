@@ -1,28 +1,15 @@
-import ThemeContexExample from "./components/state/use-context/them-contex";
-
 function App() {
   // const [show, setShow] = useState(false);
 
   return (
     <>
-      {/* Xample */}
-      {/* <ExampleReducer1 /> */}
-      {/* <ExampleReducer2 /> */}
-      {/* <ComplexStateManagement /> */}
+      {/* <FetchDataWithUseEffect /> */}
+      {/* <ConnectToDummyAPI /> */}
+      {/* <CreatePostInteractiveWithHTTP /> */}
+      {/* <DeletePostInteractiveExample postId={101} /> */}
 
-      {/* Exercise */}
-      {/* <Counter /> */}
-      {/* <TaskManager /> */}
-      {/* <Calculator /> */}
-      {/* <ShoppingCart /> */}
-
-      {/* Context */}
-      {/* <ExampleContext1 /> */}
-      {/* <ExampleContext1 /> */}
-      {/* <UserProfile /> */}
-
-      {/* Exercies */}
-      <ThemeContexExample />
+      {/* <CustomHookEndPoint /> */}
+      {/* <CustomHookEndPoint2 /> */}
     </>
   );
 }
