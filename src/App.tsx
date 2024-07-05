@@ -1,3 +1,4 @@
+import ThemeContexExample from "./components/state/use-context/them-contex";
 
 function App() {
   // const [show, setShow] = useState(false);
@@ -5,7 +6,7 @@ function App() {
   return (
     <>
       {/* Xample */}
-      {/* <ExampleReducer1/> */}
+      {/* <ExampleReducer1 /> */}
       {/* <ExampleReducer2 /> */}
       {/* <ComplexStateManagement /> */}
 
@@ -16,12 +17,12 @@ function App() {
       {/* <ShoppingCart /> */}
 
       {/* Context */}
-      {/* Exxample */}
+      {/* <ExampleContext1 /> */}
       {/* <ExampleContext1 /> */}
       {/* <UserProfile /> */}
 
       {/* Exercies */}
-      {/* <ThemeContexExample /> */}
+      <ThemeContexExample />
     </>
   );
 }

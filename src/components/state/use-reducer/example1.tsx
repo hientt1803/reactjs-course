@@ -21,7 +21,7 @@ const reducer = (state: number, action: string) => {
       return state + 1;
     case "REDUCE":
       return state - 1;
-    case "REMOVE":
+    case "REMOVE": 
       return 0;
 
     default:
@@ -29,7 +29,8 @@ const reducer = (state: number, action: string) => {
   }
 };
 
-const reducer2 = (state: number, action: { type: string; value: number }) => {
+const reducer2 = (state: number, action: { type: string;
+   value: number }) => {
   switch (action.type) {
     case "ASSIGN":
       return action.value;

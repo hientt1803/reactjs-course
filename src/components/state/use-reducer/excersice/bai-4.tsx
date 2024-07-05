@@ -7,7 +7,7 @@ interface ICartItem {
 }
 
 interface ICart {
-  cart: ICartItem[];
+  carts: ICartItem[];
 }
 
 interface IAddToCartAction {
@@ -30,43 +30,57 @@ interface IUpdateQuantityAction {
 
 type IAction = IAddToCartAction | IRemoveFromCartAction | IUpdateQuantityAction;
 
-const initialState: ICart = { cart: [] };
+const initialState: ICart = { carts: [] };
 
 const reducer = (state: ICart, action: IAction): ICart => {
   switch (action.type) {
     case "ADD_TO_CART":
-      return { cart: [...state.cart, action.payload] };
+      return { carts: [...state.carts, action.payload] };
     case "REMOVE_FROM_CART":
-      return { cart: state.cart.filter((item) => item.id !== action.payload) };
+      return {
+        carts: state.carts.filter((item) => item.id !== action.payload),
+      };
     case "UPDATE_QUANTITY":
       return {
-        cart: state.cart.map((item) =>
-          item.id === action.payload.id
-            ? { ...item, quantity: action.payload.quantity }
-            : item
+        carts: state.carts.map((cart) =>
+          cart.id === action.payload.id
+            ? { ...cart, quantity: action.payload.quantity }
+            : cart
         ),
       };
+
     default:
       return state;
   }
 };
+/**
+ * 
+interface IUpdateQuantityAction {
+  type: "UPDATE_QUANTITY";
+  payload: {
+    id: number;
+    quantity: number;
+  };
+}
+ */
 
 const ShoppingCart = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
   return (
     <div>
       <button
         onClick={() =>
           dispatch({
             type: "ADD_TO_CART",
-            payload: { id: Date.now(), name: "New Item", quantity: 1 },
+            payload: { id: Date.now(), name: "new item", quantity: 1 },
           })
         }
       >
         Add Item
       </button>
       <ul>
-        {state.cart.map((item) => (
+        {state.carts.map((item) => (
           <li key={item.id}>
             {item.name} - {item.quantity}
             <button

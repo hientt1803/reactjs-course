@@ -56,6 +56,12 @@ const reducer = (state: IState, action: IAction) => {
       };
     default:
       return state;
+
+    // lap qua mang
+    /**
+     * Minh check neu cai id = id minh muon cap nhat
+     * => thi minh cap nhat lai ten
+     */
   }
 };
 
@@ -76,8 +82,8 @@ const TaskManager = () => {
   };
 
   const handleSaveTask = (prevTask: ITask) => {
-    const updatedTask: ITask = { ...prevTask, text: task };
-    dispatch({ type: "EDIT_TASK", payload: updatedTask });
+    const updateTask = { ...prevTask, text: task };
+    dispatch({ type: "EDIT_TASK", payload: updateTask });
   };
 
   return (

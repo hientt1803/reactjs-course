@@ -15,6 +15,7 @@ import { UserProvider } from "./components/state/use-context/providers/user-prov
 import AuthLayout from "./layouts/AuthLayout.tsx";
 import MainLayout from "./layouts/MainLayout.tsx";
 import { ThemeProvider } from "./components/state/use-context/providers/theme.tsx";
+import { MyContext } from "./components/state/use-context/example1.tsx";
 
 /**
  * khỏi tạo router cho ứng dụng React
@@ -79,7 +80,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     {/* Cung cấp router cho ứng dụng */}
     <UserProvider>
       <ThemeProvider>
-        <RouterProvider router={router} />
+        <MyContext.Provider value={"Hello world!"}>
+          <RouterProvider router={router} />
+        </MyContext.Provider>
       </ThemeProvider>
     </UserProvider>
   </React.StrictMode>

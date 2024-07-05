@@ -7,6 +7,4 @@ export interface ThemeContextType {
 }
 
 // Create the context with a default value
-export const ThemeContext = createContext<ThemeContextType | undefined>(
-  undefined
-);
+export const ThemeContex = createContext<ThemeContextType | null>(null);

@@ -1,5 +1,6 @@
 /**
- *  Tạo một component để đếm số lần click vào một nút sử dụng useReducer.
+ *  Tạo một component để đếm số lần click vào một nút
+ *  sử dụng useReducer.
  *  Sử dụng reducer để xử lý các action click.
  */
 
@@ -11,6 +12,7 @@ const reducer = (state: { count: number }, action: { type: string }) => {
   switch (action.type) {
     case "INCREMENT":
       return { count: state.count + 1 };
+
     default:
       return state;
   }
@@ -18,6 +20,7 @@ const reducer = (state: { count: number }, action: { type: string }) => {
 
 const Counter = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
   return (
     <div>
       <p>Count: {state.count}</p>

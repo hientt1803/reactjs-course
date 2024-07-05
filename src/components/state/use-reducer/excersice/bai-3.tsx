@@ -28,6 +28,7 @@ const reducer = (state: IState, action: IAction): IState => {
 
 const Calculator = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
   return (
     <div>
       <p>Result: {state.result}</p>
