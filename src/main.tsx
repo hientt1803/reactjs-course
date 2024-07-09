@@ -5,6 +5,7 @@ import "./styles/index.css";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import { RecoilRoot } from "recoil";
 import App from "./App.tsx";
 import AboutPage from "./components/react-route/about.tsx";
 import ArticlePage from "./components/react-route/article.tsx";
@@ -14,7 +15,6 @@ import YoutubeDetail from "./components/react-route/youtube-detail.tsx";
 import { UserProvider } from "./components/state/use-context/providers/user-provider.tsx";
 import AuthLayout from "./layouts/AuthLayout.tsx";
 import MainLayout from "./layouts/MainLayout.tsx";
-import { MyContext } from "./components/state/use-context/example1.tsx";
 
 /**
  * khỏi tạo router cho ứng dụng React
@@ -78,9 +78,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     {/* Cung cấp router cho ứng dụng */}
     <UserProvider>
-      <MyContext.Provider value={"Hello world!"}>
+      <RecoilRoot>
         <RouterProvider router={router} />
-      </MyContext.Provider>
+      </RecoilRoot>
     </UserProvider>
   </React.StrictMode>
 );

@@ -1,15 +1,18 @@
+import Cart from "./components/state-management/shopping-cart/cart";
+
 function App() {
   // const [show, setShow] = useState(false);
 
   return (
     <>
-      {/* <FetchDataWithUseEffect /> */}
-      {/* <ConnectToDummyAPI /> */}
-      {/* <CreatePostInteractiveWithHTTP /> */}
-      {/* <DeletePostInteractiveExample postId={101} /> */}
-
+      {/* custom hook */}
       {/* <CustomHookEndPoint /> */}
       {/* <CustomHookEndPoint2 /> */}
+
+      {/* Recoil */}
+      {/* <TextInput /> */}
+      {/* <TodoList /> */}
+      <Cart />
     </>
   );
 }
