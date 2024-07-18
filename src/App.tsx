@@ -1,18 +1,17 @@
-import Cart from "./components/state-management/shopping-cart/cart";
+import NewTaskForm from "./components/form-manager/exercies/bai-2";
 
 function App() {
   // const [show, setShow] = useState(false);
 
   return (
     <>
-      {/* custom hook */}
-      {/* <CustomHookEndPoint /> */}
-      {/* <CustomHookEndPoint2 /> */}
+      {/* <SimpleForm /> */}
+      {/* <SimpleForm /> */}
+      {/* <FormWithReactHookForm /> */}
+      {/* <FormWithValidation /> */}
 
-      {/* Recoil */}
-      {/* <TextInput /> */}
-      {/* <TodoList /> */}
-      <Cart />
+      {/* <LoginForm /> */}
+      <NewTaskForm />
     </>
   );
 }

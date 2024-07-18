@@ -4,7 +4,7 @@ import { IPosts } from "./example2";
 import { Suspense } from "react";
 
 const ConnectToDummyAPI = () => {
-  const { data, error,isLoading } = useSWR<IPosts[]>(`${API_URL}/posts`, fetcher);
+  const { data, error } = useSWR<IPosts[]>(`${API_URL}/posts`, fetcher);
   // const [postsData, setpostsData] = useState([]);
 
   // fetch(API_URL)

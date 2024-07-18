@@ -12,6 +12,8 @@ export const cartState = atom<CartItem[]>({
   default: [],
 });
 
+/* This code snippet is defining a selector named `cartTotalState` using Recoil, a state management
+library for React. */
 export const cartTotalState = selector({
   key: 'cartTotalState',
   get: ({ get }) => {

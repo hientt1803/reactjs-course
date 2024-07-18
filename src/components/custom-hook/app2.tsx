@@ -7,3 +7,4 @@ const CustomHookEndPoint2 = () => {
 };
 
 export default CustomHookEndPoint2;
+ 

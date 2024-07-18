@@ -6,7 +6,8 @@ const Cart: React.FC = () => {
   const [cart, setCart] = useRecoilState(cartState);
   const total = useRecoilValue(cartTotalState);
   const [name, setName] = useState("");
-  const [price, setPrice] = useState<number | string>(0);
+  const [price, setPrice] = useState<number>(0);
+  const [numberIncrement, setNumberIncrement] = useState<number>(0);
 
   const addItemToCart = (item: CartItem) => {
     setCart((prevCart) => {
@@ -29,8 +30,8 @@ const Cart: React.FC = () => {
     if (name && price) {
       addItemToCart({
         id: Date.now(),
-        name,
-        price: Number(price),
+        name: name,
+        price: price,
         quantity: 1,
       });
       setName("");
@@ -38,10 +39,24 @@ const Cart: React.FC = () => {
     }
   };
 
+  /**
+   * The `incrementQuantity` function updates the quantity of a specific item in a cart by a specified
+   * increment or by 1 if no increment is provided.
+   * @param {number} itemId - itemId is a number that represents the unique identifier of an item in
+   * the cart.
+   */
   const incrementQuantity = (itemId: number) => {
     setCart((prevCart) =>
       prevCart.map((item) =>
-        item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
+        item.id === itemId
+          ? {
+              ...item,
+              quantity:
+                numberIncrement !== 0
+                  ? item.quantity + numberIncrement
+                  : item.quantity + 1,
+            }
+          : item
       )
     );
   };
@@ -75,6 +90,15 @@ const Cart: React.FC = () => {
           setPrice(Number(e.target.value))
         }
       />
+      <select
+        name=""
+        value={numberIncrement}
+        onChange={(e) => setNumberIncrement(Number(e.target.value))}
+      >
+        <option value="0">0</option>
+        <option value="20">20</option>
+        <option value="40">40</option>
+      </select>
       <button onClick={handleAddItem}>Thêm sản phẩm</button>
       <ul>
         {cart.map((item) => (

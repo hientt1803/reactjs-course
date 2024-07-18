@@ -1,9 +1,11 @@
-import React from 'react';
-import { useRecoilState } from 'recoil';
-import { textState } from './stores';
+import React from "react";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { textState } from "./stores";
 
 const TextInput: React.FC = () => {
   const [text, setText] = useRecoilState(textState);
+  const textState2 = useRecoilValue(textState);
+  // const setTextState2 = useSetRecoilState(textState);
 
   const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setText(event.target.value);
@@ -11,9 +13,11 @@ const TextInput: React.FC = () => {
 
   return (
     <div>
-      <input type="text" value={text} onChange={onChange} />
+      <input type="number" value={text} onChange={onChange} />
       <br />
       Echo: {text}
+      {textState2}
+      {/* <button></button> */}
     </div>
   );
 };

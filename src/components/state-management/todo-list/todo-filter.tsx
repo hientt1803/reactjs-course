@@ -6,8 +6,6 @@ export function TodoListFilters() {
   const [filter, setFilter] = useRecoilState(todoListFilterState);
 
   const updateFilter = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log(e.target.value);
-    
     setFilter(e.target.value);
   };
 
